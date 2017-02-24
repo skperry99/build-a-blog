@@ -1,0 +1,18 @@
+<!-- Displays main blog page with 5 most recent entries -->
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<hr>
+
+{% for entry in entries %}
+    <div class="entry">
+        <div class="entry-title">
+            <a href="/blog/{{entry.key().id()}}">{{entry.title}}</a>
+        </div>
+        <pre class="entry-body">{{entry.entry}}</pre>
+    </div>
+    {% endfor %}
+
+{% endblock %}

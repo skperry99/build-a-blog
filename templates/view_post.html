@@ -1,0 +1,11 @@
+<!-- Displays specific blog entry -->
+
+{% extends "base.html" %}
+
+{% block content %}
+<div class="entry">
+    <div class="entry-title">{{blog.title}}</div>
+    <pre class="entry-body">{{blog.entry}}</pre>
+</div>
+
+{% endblock %}
