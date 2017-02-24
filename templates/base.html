@@ -9,7 +9,7 @@
                 width: 800px;
                 margin: 0 auto;
                 padding: 10px;
-                background-color: khaki
+                background-color: #f3eba5;
             }
 
             .error {
@@ -36,7 +36,7 @@
             }
 
             input[type=submit] {
-                font-size: 24px;
+                font-size: 17px;
             }
 
             hr {
@@ -57,31 +57,38 @@
                 font-size: 17px;
             }
             .button {
-                font: bold 11px Arial;
+                font-size: 17px;
+                font-weight: bold;
                 text-decoration: none;
-                background-color: #EEEEEE;
-                color: #333333;
-                padding: 2px 6px 2px 6px;
-                border-top: 1px solid #CCCCCC;
-                border-right: 1px solid #333333;
-                border-bottom: 1px solid #333333;
-                border-left: 1px solid #CCCCCC;
+                background-color: #ede178;
+                color: blue;
+                padding: 3px 7px 3px 7px;
+                border-top: 2px solid #CCCCCC;
+                border-right: 2px solid #333333;
+                border-bottom: 2px solid #333333;
+                border-left: 2px solid #CCCCCC;
             }
-            .name {
+            h1 {
                 font-family: Impact;
                 color: blue;
+                text-align: center;
+            }
+            .nav {
+                text-align: center;
             }
         </style>
     </head>
 
     <body>
-        <h1 class="name">Really Cool Blog!</h1>
+        <h1>Really Cool Blog!</h1>
 
-        <ul>
-            <li><a href="/" class="button">Home</a></li>
-            <li><a href="/newpost" class="button">New Post</a></li>
-            <li><a href="/blogpage" class="button">All Posts</a></li>
-        </ul>
+        <div class="nav">
+            <a href="/" class="button">Home</a>
+            <a href="/newpost" class="button">New Post</a>
+            <a href="/blogpage" class="button">All Posts</a>
+        </div>
+
+        <hr>
 
         {% block content %}
         {% endblock %}

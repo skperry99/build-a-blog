@@ -35,6 +35,10 @@ class Handler(webapp2.RequestHandler):
     def render(self, template, **kw):
         self.write(self.render_str(template, **kw))
 
+    def render_error(self, error_code):
+        self.error(error_code)
+        self.response.write("That blog entry can't be found")
+
 class Blog(db.Model):
     title = db.StringProperty(required = True)
     entry = db.TextProperty(required = True)
@@ -100,14 +104,11 @@ class ViewPostHandler(Handler):
     def render_view_post(self, entry_id, error=''):
         blog = Blog.get_by_id(int(entry_id))
         if not blog:
-            error = "Something went wrong"
-            self.redirect("/", error)
+            self.render_error(400)
+            return
 
         else:
             self.render("view_post.html", blog=blog)
-
-        #t = jinja2.get_template('view_post.html')
-        #content = t.render(entry=entry)
 
     def get(self, entry_id):
         self.render_view_post(entry_id)

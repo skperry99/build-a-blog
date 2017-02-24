@@ -4,8 +4,6 @@
 
 {% block content %}
 
-<hr>
-
 {% for entry in entries %}
     <div class="entry">
         <div class="entry-title">
@@ -13,6 +11,6 @@
         </div>
         <pre class="entry-body">{{entry.entry}}</pre>
     </div>
-    {% endfor %}
+{% endfor %}
 
 {% endblock %}
